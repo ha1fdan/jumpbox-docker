@@ -9,7 +9,7 @@ services:
       - LANG=en
       - WG_HOST=${WG_HOST}
       - PASSWORD_HASH=${PASSWORD_HASH}
-      - PORT=51821 #ssh -L 51821:localhost:51821 user@jumpbox - http://localhost:51821
+      - PORT=51821 #ssh -N -L 51821:localhost:51821 user@jumpbox - http://localhost:51821
       - WG_PORT=51820
       - WG_DEFAULT_DNS=1.1.1.1
       - WG_PERSISTENT_KEEPALIVE=0

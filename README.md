@@ -80,3 +80,23 @@ Start by cloning the repo: `git clone https://github.com/ha1fdan/jumpbox-docker.
 5. Done.
 
 ---
+
+### Information about SSH tunneling
+
+#### Forward from your pc to jumpbox:
+
+`ssh -N -R [public_port]:127.0.0.1:[local_port] user@jumpbox`
+
+---
+
+#### Forward from jumpbox to your pc:
+
+`ssh -L [local_port]:[jumpbox_ip]:[jumpbox_port] user@jumpbox-ip`
+
+Example for the wg-easy admin webui:
+
+`ssh -N -L 51821:localhost:51821 user@jumpbox`
+
+You can now access the webui on your machine at http://localhost:51821
+
+---
