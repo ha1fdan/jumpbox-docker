@@ -72,6 +72,10 @@ Start by cloning the repo: `git clone https://github.com/ha1fdan/jumpbox-docker.
         firewall-cmd --add-port=443/tcp --permanent
         firewall-cmd --add-port=3000/tcp --permanent
         firewall-cmd --add-port=5000/tcp --permanent
+        firewall-cmd --add-port=8000/tcp --permanent
+        firewall-cmd --add-port=8080/tcp --permanent
+        firewall-cmd --add-port=8081/tcp --permanent
+        firewall-cmd --add-port=9000/tcp --permanent
         firewall-cmd --add-port=9001/tcp --permanent
         firewall-cmd --reload
         ```
@@ -86,6 +90,14 @@ Start by cloning the repo: `git clone https://github.com/ha1fdan/jumpbox-docker.
 #### Forward from your pc to jumpbox:
 
 `ssh -N -R [jumpbox_port]:127.0.0.1:[local_port] user@jumpbox`
+
+Example of this (you need port 8080 open for this to work):
+
+Your machine: `python3 -m http.server 8000`
+
+Jumpbox: `ssh -N -R 8080:127.0.0.1:8000 user@jumpbox`
+
+You can now access your machine's webserver at http://jumpbox:8080
 
 ---
 
