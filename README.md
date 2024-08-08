@@ -85,13 +85,13 @@ Start by cloning the repo: `git clone https://github.com/ha1fdan/jumpbox-docker.
 
 #### Forward from your pc to jumpbox:
 
-`ssh -N -R [public_port]:127.0.0.1:[local_port] user@jumpbox`
+`ssh -N -R [jumpbox_port]:127.0.0.1:[local_port] user@jumpbox`
 
 ---
 
 #### Forward from jumpbox to your pc:
 
-`ssh -L [local_port]:[jumpbox_ip]:[jumpbox_port] user@jumpbox-ip`
+`ssh -L [local_port]:127.0.0.1:[jumpbox_port] user@jumpbox`
 
 Example for the wg-easy admin webui:
 
